@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"skinname-pukiskin": "PukiSkin",
+	"pukiskin-desc": "MediaWiki用のPukiWiki風な外装。",
+	"pukiskin.css": "/* CSS placed here will affect users of the PukiSkin */",
+	"pukiskin.js": "/* Any JavaScript here will be loaded for users using the PukiSkin */"
+}
