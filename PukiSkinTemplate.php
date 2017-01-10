@@ -29,12 +29,14 @@ class PukiSkinTemplate extends BaseTemplate {
 		// Suppress warnings to prevent notices about missing indexes in $this->data
 		wfSuppressWarnings();
 		/* following few lines were stolen from printSource() in skins/Skin.php */
-		$oldid = $this->getSkin()->getRevisionId();
-		if ( $oldid ) {
-			$canonicalUrl = $this->getSkin()->getTitle()->getCanonicalURL( 'oldid=' . $oldid );
+		$skin = $this->getSkin();
+		$oldid = $skin->getRevisionId();
+		$title = $skin->getTitle();
+		if ( $oldid && $title->getNextRevisionID( $oldid ) ) {
+			$canonicalUrl = $title->getCanonicalURL( 'oldid=' . $oldid );
 			$url = htmlspecialchars( wfExpandIRI( $canonicalUrl ) );
 		} else {
-			$url = htmlspecialchars( wfExpandIRI( $this->getSkin()->getTitle()->getCanonicalURL() ) );
+			$url = htmlspecialchars( wfExpandIRI( $title->getCanonicalURL() ) );
 		}
 		$this->html( 'headelement' );
 		?><div id="globalWrapper">
