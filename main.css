@@ -552,8 +552,8 @@ li#ca-print {
 /*
 ** footer
 */
-div#footer {
-	background-color: white;
+#footer {
+	background-color: #fff;
 	border-top: 1px solid #fabd23;
 	border-bottom: 1px solid #fabd23;
 	margin: .6em 0 1em 0;
@@ -563,7 +563,7 @@ div#footer {
 	font-size: 90%;
 }
 
-div#footer li {
+#footer li {
 	display: inline;
 	margin: 0 1.3em;
 }
