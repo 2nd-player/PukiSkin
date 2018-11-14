@@ -124,8 +124,7 @@ class PukiSkinTemplate extends BaseTemplate {
 					<!-- end content -->
 					<?php
 					if ( $this->data['dataAfterContent'] ) {
-						$this->html( 'dataAfterContent'
-						);
+						$this->html( 'dataAfterContent' );
 					}
 					?>
 					<div class="visualClear"></div>
@@ -156,8 +155,8 @@ class PukiSkinTemplate extends BaseTemplate {
 		</div><!-- end of the left (by default at least) column -->
 		<div class="visualClear"></div>
 		<?php
-		$validFooterIcons = $this->getFooterIcons( "icononly" );
-		$validFooterLinks = $this->getFooterLinks( "flat" ); // Additional footer links
+		$validFooterIcons = $this->getFooterIcons( 'icononly' );
+		$validFooterLinks = $this->getFooterLinks( 'flat' ); // Additional footer links
 
 		if ( count( $validFooterIcons ) + count( $validFooterLinks ) > 0 ) {
 			?>
@@ -250,20 +249,20 @@ class PukiSkinTemplate extends BaseTemplate {
 
 			<div id="searchBody" class="pBody">
 				<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
-					<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
-					<?php echo $this->makeSearchInput( array( "id" => "searchInput" ) ); ?>
+					<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+					<?php echo $this->makeSearchInput( array( 'id' => 'searchInput' ) ); ?>
 
 					<?php
 					echo $this->makeSearchButton(
-						"go",
-						array( "id" => "searchGoButton", "class" => "searchButton" )
+						'go',
+						array( 'id' => 'searchGoButton', 'class' => 'searchButton' )
 					);
 
 					if ( $this->config->get( 'UseTwoButtonsSearchForm' ) ) {
 						?>&#160;
 						<?php echo $this->makeSearchButton(
-							"fulltext",
-							array( "id" => "mw-searchButton", "class" => "searchButton" )
+							'fulltext',
+							array( 'id' => 'mw-searchButton', 'class' => 'searchButton' )
 						);
 					} else {
 						?>
@@ -315,8 +314,8 @@ class PukiSkinTemplate extends BaseTemplate {
 
 				<div class="pBody">
 					<ul>
-						<?php foreach ( $this->data['language_urls'] as $key => $langlink ) { ?>
-							<?php echo $this->makeListItem( $key, $langlink ); ?>
+						<?php foreach ( $this->data['language_urls'] as $key => $langLink ) { ?>
+							<?php echo $this->makeListItem( $key, $langLink ); ?>
 
 						<?php
 }
@@ -352,7 +351,7 @@ class PukiSkinTemplate extends BaseTemplate {
 		?>
 
 		<h5><?php echo htmlspecialchars( $msgObj->exists() ? $msgObj->text() : $bar ); ?></h5>
-		<div class='pBody'>
+		<div class="pBody">
 			<?php
 			if ( is_array( $cont ) ) {
 				?>
