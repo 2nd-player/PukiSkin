@@ -292,8 +292,11 @@ class PukiSkinTemplate extends BaseTemplate {
 
 					<?php
 					}
-					Hooks::run( 'PukiSkinTemplateToolboxEnd', array( &$this ) );
-					Hooks::run( 'SkinTemplateToolboxEnd', array( &$this, true ) );
+
+					//Avoid PHP 7.1 warnings
+					$skin = $this;
+					Hooks::run( 'PukiSkinTemplateToolboxEnd', array( &$skin ) );
+					Hooks::run( 'SkinTemplateToolboxEnd', array( &$skin, true ) );
 					?>
 				</ul>
 				<?php $this->renderAfterPortlet( 'tb' ); ?>
