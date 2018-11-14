@@ -131,6 +131,7 @@ class PukiSkinTemplate extends BaseTemplate {
 					<div class="visualClear"></div>
 				</div>
 			</div>
+			<?php Hooks::run( 'PukiSkinAfterContent' ); ?>
 		</div>
 		<div id="column-one"<?php $this->html( 'userlangattributes' ) ?>>
 			<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
@@ -326,6 +327,7 @@ class PukiSkinTemplate extends BaseTemplate {
 				</div>
 			</div>
 		<?php
+			Hooks::run( 'PukiSkinAfterToolbox' );
 		}
 	}
 
