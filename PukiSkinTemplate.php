@@ -26,8 +26,6 @@
  */
 class PukiSkinTemplate extends BaseTemplate {
 	public function execute() {
-		// Suppress warnings to prevent notices about missing indexes in $this->data
-		wfSuppressWarnings();
 		/* following few lines were stolen from printSource() in skins/Skin.php */
 		$skin = $this->getSkin();
 		$oldid = $skin->getRevisionId();
@@ -203,7 +201,6 @@ class PukiSkinTemplate extends BaseTemplate {
 		echo Html::closeElement( 'body' );
 		echo Html::closeElement( 'html' );
 		echo "\n";
-		wfRestoreWarnings();
 	} // end of execute() method
 
 	/*************************************************************************************************/
